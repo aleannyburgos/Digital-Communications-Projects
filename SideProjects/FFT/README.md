@@ -1,4 +1,5 @@
 ***Fourier Spectrum***
+
 This is a matlab script that performs the fourier transform on a recorded audio.wav file. There is also a test file used to visual the process at a simpler scale.
 
 **Steps**
