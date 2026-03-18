@@ -1,0 +1,32 @@
+clc
+clear
+close
+
+samplerate = 1000;
+t = 0 : 1/samplerate : 4;
+
+function y=ustepy(t)
+    y = (t>=0);
+end
+
+function y = impulse(t)
+y = (t == 0); % Define the impulse function
+end
+
+y = (ustepy(t) - ustepy(t-1) + ustepy(t-3)- ustepy(t-4)) - 0.5;
+nexttile;
+plot(t,y)
+title("")
+grid on
+
+nexttile;
+yplus = sin(2*pi*t);
+plot(t, yplus)
+grid on
+
+nexttile;
+bothplus = y .* yplus;
+plot(t, bothplus)
+title("Carrier signal")
+grid on
+
